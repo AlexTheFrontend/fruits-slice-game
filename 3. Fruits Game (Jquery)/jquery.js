@@ -18,7 +18,7 @@ $('#startreset').click(function(){
            //set score to 0
            score = 0;
            $('#scorevalue').html(score);
-           //show trials left
+           //show lives left
            $('#trialsLeft').show();
            trialsLeft = 3;
         addHearths();
@@ -33,7 +33,7 @@ $('#startreset').click(function(){
 });
 
     //slice a fruit
-$('#fruit1').mouseover(function(){ 
+$('#fruit1').hover(function(){ 
     score++;
 $('#scorevalue').html(score); //update score // document.getElementById("slicesound").play();
 $('#slicesound')[0].play(); //play sound 
@@ -73,7 +73,7 @@ function chooseFruit(){
     //random position
     
     //generate a random step
-    step = 1+ Math.round(6*Math.random()); //step between 1 and 6
+    step = 1 + Math.round(5*Math.random()); //step between 1 and 6
     //Move fruit down by 10ms
     action = setInterval(function(){
         //move fruit down by 1 step every 10ms
@@ -87,7 +87,7 @@ function chooseFruit(){
                 $('#fruit1').css({'left' : Math.round(550*Math.random()), 'top' : -50});
     //random position
                     //generate a random step
-    step = 1+ Math.round(9*Math.random()); //step between 1 and 6
+    step = 1+ Math.round(5*Math.random()); //step between 1 and 6
                 trialsLeft --;
                 //populate trialsLeft box
                 addHearths();
@@ -100,8 +100,8 @@ function chooseFruit(){
                 stopAction();
             }
         }
-        
-        }, 10);
+        // ms for the interval (speed of fruits)
+        }, 15);
 
 }
 
